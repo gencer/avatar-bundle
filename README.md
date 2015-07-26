@@ -14,6 +14,12 @@ It includes one default avatar provider - `GravatarProvider`.
 composer require maba/avatar-bundle
 ```
 
+Inside `AppKernel::registerBundles`:
+
+```php
+new Maba\Bundle\AvatarBundle\MabaAvatarBundle(),
+```
+
 ## Configuring
 
 ```yml
@@ -24,19 +30,19 @@ maba_avatar:
         enabled: true
         secure: false
         force_default: false
-        default: mm                     # one of mm, 404, identicon, monsterid, wavatar, retro, blank
-                                        # ignored if default_uri is set
-        rating: ~                       # one of g, pg, r, x
+        default: mm             # one of mm, 404, identicon, monsterid, wavatar, retro, blank
+                                # ignored if default_uri is set
+        rating: ~               # one of g, pg, r, x
 ```
 
 ## Adding avatar provider
 
 1. Make class which implements `Maba\Bundle\AvatarBundle\Service\AvatarProviderInterface`.
-2, Register it as a service.
+2. Register it as a service.
 3. Add tag `maba_avatar.avatar_provider` to that service.
 4. Optionally provide `priority` attribute to that tag. Smallest number means provider will be called first.
     `GravatarProvider` has `priority` `9000`, but always returns URI, so your priorities should be smaller than that.
-    If not provided, default to `0`.
+    If not provided, defaults to `0`.
 
 Example:
 
