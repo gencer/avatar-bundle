@@ -1,0 +1,4 @@
+main:
+    path:      /test
+    defaults:
+        _controller: test_controller:testAction

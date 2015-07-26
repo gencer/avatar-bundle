@@ -1,0 +1,13 @@
+framework:
+    test: ~
+    secret: test
+    templating:
+        engines: ['twig']
+    router:
+        resource: "routing.yml"
+
+services:
+    test_controller:
+        class: Maba\Bundle\AvatarBundle\Tests\Fixtures\TestController
+        calls:
+            - [setContainer, ["@service_container"]]

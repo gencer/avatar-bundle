@@ -1,0 +1,10 @@
+imports:
+    - { resource: config.yml }
+
+maba_avatar:
+    default_size: 100
+    gravatar:
+        default: "404"
+        force_default: true
+        secure: true
+        rating: x

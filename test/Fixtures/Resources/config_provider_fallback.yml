@@ -1,0 +1,14 @@
+imports:
+    - { resource: config.yml }
+
+services:
+    provider1:
+        class: Maba\Bundle\AvatarBundle\Tests\Fixtures\TestAvatarProvider
+        arguments: [provider1]
+        tags:
+            -  { name: maba_avatar.avatar_provider }
+    provider2:
+        class: Maba\Bundle\AvatarBundle\Tests\Fixtures\TestAvatarProvider
+        arguments: [null] # avatar unavailable
+        tags:
+            -  { name: maba_avatar.avatar_provider, priority: -1 } # this should be taken first

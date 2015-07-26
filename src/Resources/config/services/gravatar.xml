@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="maba_avatar.gravatar_provider" class="Maba\Bundle\AvatarBundle\Provider\GravatarProvider">
+            <tag name="maba_avatar.avatar_provider" priority="9000"/>
+
+            <argument>%maba_avatar.default_size%</argument>
+            <argument>%maba_avatar.gravatar.default%</argument>
+            <argument>%maba_avatar.default_uri%</argument>
+            <argument>%maba_avatar.gravatar.force_default%</argument>
+            <argument>%maba_avatar.gravatar.rating%</argument>
+            <argument>%maba_avatar.gravatar.secure%</argument>
+
+            <call method="setRequest">
+                <argument type="service" id="request" on-invalid="null" strict="false"/>
+            </call>
+        </service>
+    </services>
+</container>
