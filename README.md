@@ -80,6 +80,7 @@ class MyAvatarProvider implements AvatarProviderInterface
 ## Running tests
 
 [![Travis status](https://travis-ci.org/mariusbalcytis/avatar-bundle.svg?branch=master)](https://travis-ci.org/mariusbalcytis/avatar-bundle)
+[![Coverage Status](https://coveralls.io/repos/mariusbalcytis/avatar-bundle/badge.svg?branch=master&service=github)](https://coveralls.io/github/mariusbalcytis/avatar-bundle?branch=master)
 
 ```shell
 composer install
